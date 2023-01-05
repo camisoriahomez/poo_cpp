@@ -1,11 +1,22 @@
-// POO - C++ kmy
-// 
+// POO - C++ kmy                                                      //
+// guia 1 - ej 1,2                                                    //
+////////////////////////////////////////////////////////////////////////
 
-// p librerias
-#include<iostream> 
-//
+#include <iostream> 
+#include "cambioBase.h" 
 using namespace std;
 
+//Ej principal
 int main() {
-  cout >> "Ingrese numero base 10:"           
+  int n, b; // n = nro base 10, b = nueva base
+  
+  cout << "Ingrese numero base 10: ";
+  cin >> n;          
+  cout << "Ingrese nueva base [2,16]: ";
+  cin >> b;
+
+  int nuevo = cambioBase(n, b);
+  cout << "\nNumero en nueva base : " << nuevo;
+
+  return 0;
 }
