@@ -19,9 +19,9 @@ int StrStr(char s1[], char s2[]){
   int n2 = len(s2);
   for (int i = 0; i < n1; i++){
     while (s1[i+j] == s2[j] && j < n2){
-      cout << "coincidencia" << endl;
-      cout << "s1: " << s1[i+j] << endl;
-      cout << "s2: " << s2[j] << endl;
+      //cout << "DEBUG: coincidencia" << endl;
+      //cout << "s1: " << s1[i+j] << endl;
+      //cout << "s2: " << s2[j] << endl;
       j++;    
     }
     if (j == n2){
@@ -35,7 +35,7 @@ int StrStr(char s1[], char s2[]){
 int main(){ 
   char s1[80], s2[80];
   cout << "Ingrese primer arreglo de caracteres: " << endl;
-  cin >> s1;
+  cin.getline(s1, 79);
   cout << "Ingrese segundo arreglo de caracteres: " << endl;
   cin >> s2;
   
