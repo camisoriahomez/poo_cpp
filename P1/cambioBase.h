@@ -16,7 +16,22 @@ int hallarMaxPot(int n, int b){
   return exp-1;
 }
 
-int aNuevaBase(int n, int b, int maxExp){
+char mapeo(int n){
+  char letra = 'z';
+  if (n == 10) letra = 'A';
+  else if (n == 11) letra = 'B';
+  else if (n == 12) letra = 'C';
+  else if (n == 13) letra = 'D';
+  else if (n == 14) letra = 'E';
+  else if (n == 15) letra = 'F';
+  else if (n == 16) letra = 'G';
+  else{
+    cout << "Error en el mapeo." << endl;
+  }
+  return letra;
+}
+
+void aNuevaBase(int n, int b, int maxExp){
   string aux = "";
   int dividendo = n;
   int exp = maxExp;
@@ -27,7 +42,12 @@ int aNuevaBase(int n, int b, int maxExp){
       //cout << "Resto: " << resto;
       digito = dividendo / int(pow(b, exp));
       //cout << "Digito " << digito;  
-      aux = aux + to_string(digito);
+      if (digito < 10){
+        aux += to_string(digito);
+      }
+      else if (digito >= 10){
+        aux += mapeo(digito);
+      }
       dividendo = resto;
       exp--;
     }
@@ -38,11 +58,11 @@ int aNuevaBase(int n, int b, int maxExp){
       dividendo = -1;
     }
   }
-  return stoi(aux);
+  cout << "Numero en nueva base: " << aux << endl;
 }
 
 int cambioBase(int n, int b){
   int exp = hallarMaxPot(n, b);
-  int aux = aNuevaBase(n, b, exp);
-  return aux;
+  aNuevaBase(n, b, exp);
+  return 0;
 }

@@ -16,7 +16,6 @@ int main() {
   cin >> b;
 
   int nuevo = cambioBase(n, b);
-  cout << "\nNumero en nueva base : " << nuevo;
-
+  
   return 0;
 }
